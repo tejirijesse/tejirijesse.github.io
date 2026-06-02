@@ -239,12 +239,12 @@
 
   .ventures {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 9px;
   }
   .venture {
-    min-height: 114px;
-    padding: 11px;
+    min-height: 150px;
+    padding: 14px;
     background: #f5f5f5;
     border: 2px outset #fff;
   }
@@ -259,6 +259,22 @@
     font-family: Arial, sans-serif;
     font-size: 12px;
     line-height: 1.4;
+  }
+  .venture a {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--maroon);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  .venture-note {
+    margin: 14px 0 0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .location-row {
@@ -314,7 +330,7 @@
   @media (max-width: 860px) {
     .hero-grid, .section-grid { grid-template-columns: 1fr; }
     .photo-wrap { min-height: 360px; }
-    .ventures { grid-template-columns: repeat(2, 1fr); }
+    .ventures { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 520px) {
@@ -365,7 +381,7 @@
         </div>
         <div class="metrics" aria-label="Founder profile metrics">
           <div class="metric"><strong>06</strong><span>companies built</span></div>
-          <div class="metric"><strong>05</strong><span>active ventures</span></div>
+          <div class="metric"><strong>03</strong><span>connected organizations</span></div>
           <div class="metric"><strong>∞</strong><span>miles still to go</span></div>
         </div>
       </div>
@@ -414,14 +430,25 @@
         <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
       </div>
       <div class="window-body">
-        <h2>Currently building</h2>
+        <h2>The Afrikabal ecosystem</h2>
         <div class="ventures">
-          <div class="venture"><strong>ROVIFY</strong><span>Sports infrastructure and athlete opportunity.</span></div>
-          <div class="venture"><strong>OTJ</strong><span>Capital systems built for frontier-market intelligence.</span></div>
-          <div class="venture"><strong>AXK</strong><span>Verification rails for trusted trade and value exchange.</span></div>
-          <div class="venture"><strong>AFRIKABAL</strong><span>Access infrastructure for producers and communities.</span></div>
-          <div class="venture"><strong>JUSTLY</strong><span>Practical legal access for everyday people.</span></div>
+          <div class="venture">
+            <strong>AFRIKABAL INC</strong>
+            <span>The commercial layer: building infrastructure for access, opportunity and resilient value chains across Africa.</span>
+            <a href="https://afrikabal.com" target="_blank" rel="noopener">Visit afrikabal.com</a>
+          </div>
+          <div class="venture">
+            <strong>AXK NETWORK</strong>
+            <span>The trust layer: verification rails for trade, identity and value exchange across connected markets.</span>
+            <a href="https://axk.org" target="_blank" rel="noopener">Visit axk.org</a>
+          </div>
+          <div class="venture">
+            <strong>AFRIKABAL FOUNDATION</strong>
+            <span>The access layer: ensuring people at the edge of digital networks can connect, participate and benefit.</span>
+            <a href="https://afrikabal.org" target="_blank" rel="noopener">Visit afrikabal.org</a>
+          </div>
         </div>
+        <p class="venture-note">I have also built and advised ventures across sports infrastructure, legal access and capital markets.</p>
       </div>
     </section>
 
