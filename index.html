@@ -2,334 +2,452 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TEJIRI JESSE :: Personal Homepage :: 1996</title>
-<meta name="description" content="Hi I am Tejiri Jesse, a social impact founder and a nomad. I have built 6 companies.">
-<meta property="og:title" content="Tejiri Jesse — Social Impact Founder + Nomad">
-<meta property="og:description" content="Hi I am Tejiri Jesse, a social impact founder and a nomad. 6 companies built across Africa.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejiri Jesse | Founder Across Africa</title>
+<meta name="description" content="Tejiri Jesse is a social impact founder building companies across Africa.">
+<meta property="og:title" content="Tejiri Jesse | Founder Across Africa">
+<meta property="og:description" content="Social impact founder. Nomad. Building practical systems across Africa.">
+<meta property="og:image" content="https://tejirijesse.com/assets/tejiri-presenting.jpg">
 <style>
+  :root {
+    --desktop: #8fa83c;
+    --panel: #c7c7c7;
+    --panel-light: #f5f5f5;
+    --blue: #071f85;
+    --blue-light: #1282c4;
+    --ink: #101010;
+    --green: #064f36;
+    --yellow: #ffd400;
+    --maroon: #780b18;
+    --line: #272727;
+  }
+
   *, *::before, *::after { box-sizing: border-box; }
-
-  html, body {
-    margin: 0; padding: 0;
-    background: #A0B83C;
-    color: #0a1f0a;
-    font-family: "Comic Sans MS", "Chalkboard SE", cursive;
-    font-size: 16px;
-    min-height: 100%;
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--desktop);
+    color: var(--ink);
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0;
     background-image:
-      repeating-linear-gradient(0deg, transparent 0 39px, rgba(0,0,0,0.04) 39px 40px),
-      repeating-linear-gradient(90deg, transparent 0 39px, rgba(0,0,0,0.04) 39px 40px);
+      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
-  .top-banner {
-    background: #ffd200;
-    color: #000;
-    border-bottom: 4px ridge #000;
-    font-family: "Courier New", monospace;
-    font-weight: bold;
-    text-align: center;
-    padding: 6px 0;
-    letter-spacing: 2px;
-    font-size: 13px;
-    text-transform: uppercase;
-  }
-  .blink { animation: blink 1.2s steps(2) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  a { color: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
 
-  .container {
-    max-width: 720px;
-    margin: 28px auto;
-    padding: 0 12px;
-  }
-
-  /* ─── '95 window frame ─── */
-  .window {
-    background: #C0C0C0;
-    border: 3px outset #ffffff;
-    box-shadow: 4px 4px 0 #00000088;
-    margin-bottom: 22px;
-  }
-  .titlebar {
-    background: linear-gradient(90deg, #000080, #1084d0);
-    color: #fff;
-    padding: 4px 8px;
-    font-family: "Tahoma", sans-serif;
-    font-size: 13px;
-    font-weight: bold;
+  .topline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #000;
+    gap: 16px;
+    min-height: 38px;
+    padding: 7px 18px;
+    background: var(--yellow);
+    border-bottom: 3px solid var(--line);
+    color: #111;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
-  .titlebar-buttons span {
+  .topline nav { display: flex; flex-wrap: wrap; gap: 14px; }
+  .topline a { text-decoration: none; }
+  .topline a:hover { text-decoration: underline; }
+  .status-dot {
     display: inline-block;
-    width: 16px; height: 14px;
-    background: #C0C0C0;
-    border: 1px outset #fff;
-    text-align: center; line-height: 12px;
-    color: #000; font-size: 10px;
-    margin-left: 2px;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    background: #0b8b45;
+    border: 1px solid #003c1e;
   }
-  .window-body { padding: 16px 20px 20px; }
 
-  /* ─── hero ─── */
-  h1 {
-    font-family: "Courier New", monospace;
-    font-size: 28px;
-    text-align: center;
-    margin: 0 0 10px;
-    color: #0a1f0a;
-    text-shadow: 2px 2px 0 #ffffff80;
-    letter-spacing: 1px;
+  .shell {
+    width: min(1120px, calc(100% - 28px));
+    margin: 24px auto 34px;
   }
-  h1 .cursor {
+
+  .window {
+    margin-bottom: 20px;
+    background: var(--panel);
+    border: 3px outset #fff;
+    box-shadow: 5px 5px 0 rgba(0,0,0,.42);
+  }
+  .titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 28px;
+    padding: 4px 7px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light));
+    border-bottom: 2px solid #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .window-controls { display: flex; gap: 3px; }
+  .window-controls span {
+    display: grid;
+    width: 17px;
+    height: 16px;
+    place-items: center;
+    background: var(--panel);
+    border: 1px outset #fff;
+    color: #111;
+    font-size: 10px;
+    line-height: 1;
+  }
+  .window-body { padding: 18px; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(290px, .75fr);
+    gap: 18px;
+    align-items: stretch;
+  }
+  .photo-wrap {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+    border: 3px inset #fff;
+    background: #222;
+  }
+  .photo-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: grayscale(100%) contrast(1.03);
+  }
+  .photo-caption {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+    padding: 6px 8px;
+    background: rgba(0,0,0,.82);
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 18px;
+    background: #efefef;
+    border: 3px inset #fff;
+  }
+  .eyebrow {
+    margin: 0 0 14px;
+    color: var(--maroon);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    color: #082b22;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: .95;
+    overflow-wrap: anywhere;
+  }
+  .cursor {
     display: inline-block;
-    width: 12px; height: 24px;
-    background: #0a1f0a;
-    vertical-align: text-bottom;
-    margin-left: 4px;
+    width: .18em;
+    height: .82em;
+    margin-left: 5px;
+    background: #082b22;
     animation: blink 1s steps(2) infinite;
   }
+  @keyframes blink { 50% { opacity: 0; } }
   .lede {
-    font-size: 17px;
-    text-align: center;
-    line-height: 1.6;
-    margin: 0;
+    margin: 20px 0 0;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    line-height: 1.35;
   }
-  .lede strong { color: #800000; }
-
-  /* ─── stats / locations ─── */
-  .pill-row {
-    text-align: center;
-    margin: 14px 0 4px;
-    font-size: 13px;
-    font-family: "Courier New", monospace;
-  }
-  .pill-row .pill {
-    display: inline-block;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 3px 8px;
-    margin: 3px;
-    color: #000;
-  }
-  .stat {
-    text-align: center;
-    margin: 14px 0 4px;
-  }
-  .stat .num {
-    font-family: "Courier New", monospace;
-    font-size: 36px;
-    font-weight: bold;
-    color: #800000;
-    background: #fff;
-    border: 2px inset #ddd;
-    padding: 4px 14px;
-    display: inline-block;
-    text-shadow: 2px 2px 0 #00000022;
-  }
-  .stat .label {
-    font-family: "Tahoma", sans-serif;
-    font-size: 13px;
-    margin-top: 2px;
-  }
-
-  /* ─── adventure game ─── */
-  .game {
-    background: #000;
-    color: #00ff00;
-    border: 3px inset #fff;
-    padding: 14px 18px;
-    font-family: "Courier New", monospace;
-    font-size: 13px;
-    line-height: 1.55;
-    min-height: 240px;
-  }
-  .game .scene {
-    white-space: pre-wrap;
-    margin: 0 0 12px;
-  }
-  .game .choices {
-    list-style: none;
-    margin: 0; padding: 0;
-  }
-  .game .choices li {
-    margin: 5px 0;
-  }
-  .game .choices button {
-    background: #001a00;
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    font-family: "Courier New", monospace;
-    font-size: 13px;
-    padding: 4px 10px;
-    text-align: left;
-    cursor: pointer;
-    width: 100%;
-  }
-  .game .choices button:hover {
-    background: #003300;
-  }
-  .game .reset-row {
-    margin-top: 10px;
-    text-align: right;
-  }
-  .game .reset-row button {
-    background: #00ff00;
-    color: #000;
-    border: 1px outset #fff;
-    font-family: "Courier New", monospace;
-    font-size: 11px;
-    padding: 2px 8px;
-    cursor: pointer;
-  }
-  .game .you {
-    color: #ffff00;
-  }
-  .game .prompt {
-    color: #00ff00;
-  }
-
-  /* ─── visitor counter ─── */
-  .counter-row {
-    text-align: center;
-    margin: 14px 0 4px;
-    font-family: "Courier New", monospace;
-    font-size: 13px;
-  }
-  .counter {
-    display: inline-block;
-    background: #000;
-    color: #00ff00;
-    padding: 3px 8px;
-    border: 2px inset #fff;
-    letter-spacing: 6px;
-    font-size: 17px;
-    font-family: "Courier New", monospace;
-  }
-
-  hr.retro {
-    border: none;
-    height: 4px;
-    margin: 18px 0;
-    background: linear-gradient(90deg,
-      #ff0000 0%, #ffa500 16%, #ffff00 33%,
-      #00ff00 50%, #00bfff 66%, #4b0082 83%, #ee82ee 100%);
-  }
-
-  /* ─── links ─── */
-  .links {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-    margin: 16px 0 6px;
-  }
-  .links a {
-    display: inline-block;
-    background: #C0C0C0;
-    border: 2px outset #ffffff;
-    padding: 6px 14px;
-    color: #000;
-    text-decoration: none;
-    font-family: "Tahoma", sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .links a:hover { background: #d8d8d8; }
-  .links a:active { border-style: inset; }
-
-  footer {
-    text-align: center;
-    font-family: "Courier New", monospace;
+  .hero-note {
+    margin: 22px 0 0;
+    padding-top: 14px;
+    border-top: 1px dashed #555;
     font-size: 12px;
-    margin: 22px 12px 30px;
-    color: #2c4a14;
-    line-height: 1.7;
-  }
-  footer .badge {
-    display: inline-block;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 1px 6px;
-    margin: 0 3px;
-    font-size: 10px;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 1.55;
   }
 
-  @media (max-width: 600px) {
-    h1 { font-size: 22px; }
-    .lede { font-size: 15px; }
-    .stat .num { font-size: 28px; }
-    .game { font-size: 12px; padding: 10px 12px; }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 16px;
+    border: 2px inset #fff;
+    background: #fff;
+  }
+  .metric {
+    min-height: 80px;
+    padding: 10px;
+    border-right: 1px solid #999;
+  }
+  .metric:last-child { border-right: 0; }
+  .metric strong {
+    display: block;
+    color: var(--maroon);
+    font-size: 30px;
+    line-height: 1;
+  }
+  .metric span {
+    display: block;
+    margin-top: 7px;
+    font-size: 11px;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+    gap: 20px;
+  }
+  h2 {
+    margin: 0 0 12px;
+    color: #082b22;
+    font-size: 22px;
+  }
+  p { line-height: 1.65; }
+  .about-copy { margin: 0; font-family: Georgia, serif; font-size: 17px; }
+  .principles {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .principles li {
+    padding: 9px 0;
+    border-bottom: 1px dashed #777;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .principles li:last-child { border-bottom: 0; }
+  .principles strong { color: var(--maroon); }
+
+  .ventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 9px;
+  }
+  .venture {
+    min-height: 114px;
+    padding: 11px;
+    background: #f5f5f5;
+    border: 2px outset #fff;
+  }
+  .venture strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--blue);
+    font-size: 14px;
+  }
+  .venture span {
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .location-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+  }
+  .tag {
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #222;
+    font-size: 11px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .contact-grid a {
+    min-height: 46px;
+    padding: 14px 8px;
+    background: var(--panel);
+    border: 2px outset #fff;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+  .contact-grid a:hover { background: #e7e7e7; }
+  .contact-grid a:active { border-style: inset; }
+
+  .footer {
+    margin-top: 18px;
+    color: #1d3210;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    margin: 5px 2px 0;
+    padding: 2px 6px;
+    background: #fff;
+    border: 1px solid #222;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid, .section-grid { grid-template-columns: 1fr; }
+    .photo-wrap { min-height: 360px; }
+    .ventures { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .topline { align-items: flex-start; flex-direction: column; gap: 6px; padding: 8px 12px; }
+    .topline nav { gap: 10px; }
+    .shell { width: min(100% - 16px, 1120px); margin-top: 12px; }
+    .window-body { padding: 10px; }
+    .photo-wrap { min-height: 260px; }
+    .hero-copy { padding: 14px; }
+    .lede { font-size: 18px; }
+    .metrics { grid-template-columns: 1fr; }
+    .metric { min-height: 0; border-right: 0; border-bottom: 1px solid #999; }
+    .metric:last-child { border-bottom: 0; }
+    .ventures { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
+  <header class="topline">
+    <div><span class="status-dot"></span>TejiriJesse.com / online</div>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#building">Building</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<div class="container">
-
-  <!-- ─── about ─── -->
-  <div class="window">
-    <div class="titlebar">
-      <span>📺 TejiriJesse.com</span>
-      <span class="titlebar-buttons"><span>_</span><span>□</span><span>×</span></span>
-    </div>
-    <div class="window-body">
-      <h1>HI&nbsp;I&nbsp;AM&nbsp;TEJIRI&nbsp;JESSE<span class="cursor"></span></h1>
-      <p class="lede">a <strong>social impact founder</strong> &nbsp;·&nbsp; a <strong>nomad</strong></p>
-
-      <div class="stat">
-        <div class="num">06</div>
-        <div class="label">companies built</div>
+  <main class="shell">
+    <section class="window">
+      <div class="titlebar">
+        <span>tejiri_profile.exe</span>
+        <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
       </div>
-
-      <div class="pill-row">
-        <span class="pill">Lagos</span>
-        <span class="pill">Nairobi</span>
-        <span class="pill">Kigali</span>
-        <span class="pill">Accra</span>
-        <span class="pill">Cape Town</span>
-        <span class="pill">Lisbon</span>
+      <div class="window-body">
+        <div class="hero-grid">
+          <div class="photo-wrap">
+            <img src="assets/tejiri-presenting.jpg" alt="Tejiri Jesse presenting Afrikabal to a boardroom audience">
+            <div class="photo-caption">FILE: FIELD_NOTES.JPG<br>PRESENTING AFRIKABAL</div>
+          </div>
+          <div class="hero-copy">
+            <div>
+              <p class="eyebrow">Social impact founder / nomad</p>
+              <h1>TEJIRI<br>JESSE<span class="cursor"></span></h1>
+              <p class="lede">Building practical systems for opportunity, access and growth across Africa.</p>
+            </div>
+            <p class="hero-note">CURRENT MODE: moving between Lagos, Nairobi and Kigali. Working on companies that turn overlooked problems into durable infrastructure.</p>
+          </div>
+        </div>
+        <div class="metrics" aria-label="Founder profile metrics">
+          <div class="metric"><strong>06</strong><span>companies built</span></div>
+          <div class="metric"><strong>05</strong><span>active ventures</span></div>
+          <div class="metric"><strong>∞</strong><span>miles still to go</span></div>
+        </div>
       </div>
+    </section>
+
+    <div class="section-grid">
+      <section class="window" id="about">
+        <div class="titlebar">
+          <span>readme.txt</span>
+          <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+        </div>
+        <div class="window-body">
+          <h2>Hi, I am Tejiri.</h2>
+          <p class="about-copy">I build companies and initiatives across Africa. My work lives where technology meets real-world access: helping institutions move better, making invisible people and opportunities visible, and building tools that can travel across borders.</p>
+          <div class="location-row" aria-label="Cities">
+            <span class="tag">Lagos</span>
+            <span class="tag">Nairobi</span>
+            <span class="tag">Kigali</span>
+            <span class="tag">Accra</span>
+            <span class="tag">Cape Town</span>
+            <span class="tag">Lisbon</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="window">
+        <div class="titlebar">
+          <span>operating_system.ini</span>
+          <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+        </div>
+        <div class="window-body">
+          <h2>How I work</h2>
+          <ul class="principles">
+            <li><strong>01.</strong> Start with the people closest to the problem.</li>
+            <li><strong>02.</strong> Build the smallest useful thing, then compound.</li>
+            <li><strong>03.</strong> Treat Africa as many markets, never one story.</li>
+            <li><strong>04.</strong> Make the work practical enough to survive contact with reality.</li>
+          </ul>
+        </div>
+      </section>
     </div>
-  </div>
 
-  <hr class="retro">
+    <section class="window" id="building">
+      <div class="titlebar">
+        <span>current_builds/</span>
+        <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+      </div>
+      <div class="window-body">
+        <h2>Currently building</h2>
+        <div class="ventures">
+          <div class="venture"><strong>ROVIFY</strong><span>Sports infrastructure and athlete opportunity.</span></div>
+          <div class="venture"><strong>OTJ</strong><span>Capital systems built for frontier-market intelligence.</span></div>
+          <div class="venture"><strong>AXK</strong><span>Verification rails for trusted trade and value exchange.</span></div>
+          <div class="venture"><strong>AFRIKABAL</strong><span>Access infrastructure for producers and communities.</span></div>
+          <div class="venture"><strong>JUSTLY</strong><span>Practical legal access for everyday people.</span></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="counter-row">
-    visitors: &nbsp;<span class="counter">0001337</span>
-  </div>
+    <section class="window" id="contact">
+      <div class="titlebar">
+        <span>connect.url</span>
+        <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+      </div>
+      <div class="window-body">
+        <h2>Find me online</h2>
+        <div class="contact-grid">
+          <a href="mailto:hi@tejirijesse.com">EMAIL</a>
+          <a href="https://www.linkedin.com/in/tejirijesse" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="https://instagram.com/tejirijesse" target="_blank" rel="noopener">INSTAGRAM</a>
+          <a href="https://youtube.com/@tejirijesse" target="_blank" rel="noopener">YOUTUBE</a>
+          <a href="https://pinterest.com/tejirijesse" target="_blank" rel="noopener">PINTEREST</a>
+        </div>
+      </div>
+    </section>
 
-  <div class="links">
-    <a href="mailto:hi@tejirijesse.com">📧 EMAIL</a>
-    <a href="https://www.linkedin.com/in/tejirijesse" target="_blank" rel="noopener">💼 LINKEDIN</a>
-    <a href="https://instagram.com/tejirijesse" target="_blank" rel="noopener">📸 INSTAGRAM</a>
-    <a href="https://youtube.com/@tejirijesse" target="_blank" rel="noopener">📺 YOUTUBE</a>
-    <a href="https://pinterest.com/tejirijesse" target="_blank" rel="noopener">📌 PINTEREST</a>
-  </div>
-
-</div>
-
-<footer>
-  <div>© 2026 tejirijesse.com — handcrafted in HTML &amp; coffee ☕</div>
-  <div>
-    <span class="badge">Best viewed in Netscape 4</span>
-    <span class="badge">800 × 600</span>
-    <span class="badge">No cookies</span>
-  </div>
-  <div style="margin-top:8px;">&lt;3 from somewhere on the continent</div>
-</footer>
-
-<script>
-/* visitor counter (per-browser, cosmetic) */
-try {
-  const el = document.querySelector(".counter");
-  let n = parseInt(localStorage.getItem("tj_count") || "1336", 10) + 1;
-  localStorage.setItem("tj_count", n);
-  el.textContent = String(n).padStart(7, "0");
-} catch (_) { /* no-op */ }
-</script>
-
+    <footer class="footer">
+      <div>© 2026 TEJIRIJESSE.COM / HANDCRAFTED ON THE CONTINENT</div>
+      <span class="badge">No cookies</span>
+      <span class="badge">Static HTML</span>
+      <span class="badge">Best viewed with curiosity</span>
+    </footer>
+  </main>
 </body>
 </html>
