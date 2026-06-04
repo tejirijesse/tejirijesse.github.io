@@ -7,7 +7,7 @@
 <meta name="description" content="Tejiri Jesse is an African founder, entrepreneur and operator building Afrikabal, AXK Network and Afrikabal Foundation across Lagos, Nairobi and Kigali.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Tejiri Jesse">
-<meta name="theme-color" content="#8fa83c">
+<meta name="theme-color" content="#0B3D2E">
 <link rel="canonical" href="https://tejirijesse.com/">
 <meta property="og:title" content="Tejiri Jesse | Founder, Entrepreneur and Builder Across Africa">
 <meta property="og:description" content="Tejiri Jesse is an African founder building Afrikabal, AXK Network and Afrikabal Foundation across Lagos, Nairobi and Kigali.">
@@ -117,16 +117,14 @@
 </script>
 <style>
   :root {
-    --desktop: #8fa83c;
-    --panel: #c7c7c7;
-    --panel-light: #f5f5f5;
-    --blue: #071f85;
-    --blue-light: #1282c4;
-    --ink: #101010;
-    --green: #064f36;
-    --yellow: #ffd400;
-    --maroon: #780b18;
-    --line: #272727;
+    --cream: #F8F6F1;
+    --green: #0B3D2E;
+    --ink: #111111;
+    --line: rgba(17, 17, 17, 0.14);
+    --line-strong: rgba(17, 17, 17, 0.32);
+    --panel: #FCFBF8;
+    --panel-soft: #F3F0E8;
+    --overlay: rgba(17, 17, 17, 0.74);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -134,14 +132,10 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background: var(--desktop);
+    background: var(--cream);
     color: var(--ink);
-    font-family: "Courier New", Courier, monospace;
-    letter-spacing: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-    background-size: 32px 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.01em;
   }
 
   a { color: inherit; }
@@ -152,76 +146,83 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    min-height: 38px;
-    padding: 7px 18px;
-    background: var(--yellow);
-    border-bottom: 3px solid var(--line);
-    color: #111;
+    min-height: 72px;
+    padding: 18px 28px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
-  .topline nav { display: flex; flex-wrap: wrap; gap: 14px; }
-  .topline a { text-decoration: none; }
-  .topline a:hover { text-decoration: underline; }
-  .status-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 7px;
-    background: #0b8b45;
-    border: 1px solid #003c1e;
+  .topline nav { display: flex; flex-wrap: wrap; gap: 22px; }
+  .topline a { text-decoration: none; opacity: 0.72; transition: opacity 0.18s ease; }
+  .topline a:hover { opacity: 1; }
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .orb {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--green);
+    flex-shrink: 0;
   }
 
   .shell {
-    width: min(1120px, calc(100% - 28px));
-    margin: 24px auto 34px;
+    width: min(1180px, calc(100% - 56px));
+    margin: 42px auto 64px;
   }
 
   .window {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     background: var(--panel);
-    border: 3px outset #fff;
-    box-shadow: 5px 5px 0 rgba(0,0,0,.42);
+    border: 1px solid var(--line);
+    box-shadow: none;
   }
   .titlebar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 28px;
-    padding: 4px 7px;
-    background: linear-gradient(90deg, var(--blue), var(--blue-light));
-    border-bottom: 2px solid #111;
-    color: #fff;
+    min-height: 60px;
+    padding: 0 24px;
+    background: transparent;
+    border-bottom: 1px solid var(--line);
+    color: var(--green);
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
   .window-controls { display: flex; gap: 3px; }
   .window-controls span {
     display: grid;
-    width: 17px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     place-items: center;
-    background: var(--panel);
-    border: 1px outset #fff;
-    color: #111;
-    font-size: 10px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 9px;
     line-height: 1;
   }
-  .window-body { padding: 18px; }
+  .window-body { padding: 30px; }
 
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(290px, .75fr);
-    gap: 18px;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+    gap: 28px;
     align-items: stretch;
   }
   .photo-wrap {
     position: relative;
-    min-height: 430px;
+    min-height: 500px;
     overflow: hidden;
-    border: 3px inset #fff;
+    border: 1px solid var(--line);
     background: #222;
   }
   .photo-wrap img {
@@ -237,12 +238,13 @@
     right: 10px;
     bottom: 10px;
     max-width: calc(100% - 20px);
-    padding: 6px 8px;
-    background: rgba(0,0,0,.82);
-    border: 1px solid #fff;
+    padding: 10px 12px;
+    background: var(--overlay);
+    border: 0;
     color: #fff;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.35;
+    letter-spacing: 0.12em;
   }
 
   .hero-copy {
@@ -250,99 +252,110 @@
     flex-direction: column;
     justify-content: space-between;
     min-width: 0;
-    padding: 18px;
-    background: #efefef;
-    border: 3px inset #fff;
+    padding: 38px 34px;
+    background: var(--cream);
+    border: 1px solid var(--line);
   }
   .eyebrow {
     margin: 0 0 14px;
-    color: var(--maroon);
-    font-size: 12px;
+    color: var(--green);
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.16em;
   }
   h1 {
     margin: 0;
-    color: #082b22;
-    font-size: clamp(34px, 5vw, 62px);
-    line-height: .95;
+    color: var(--green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 74px);
+    line-height: 0.96;
     overflow-wrap: anywhere;
+    letter-spacing: -0.03em;
   }
   .cursor {
     display: inline-block;
     width: .18em;
     height: .82em;
     margin-left: 5px;
-    background: #082b22;
+    background: var(--green);
     animation: blink 1s steps(2) infinite;
   }
   @keyframes blink { 50% { opacity: 0; } }
   .lede {
-    margin: 20px 0 0;
+    margin: 26px 0 0;
     font-family: Georgia, serif;
-    font-size: 21px;
-    line-height: 1.35;
+    font-size: 30px;
+    line-height: 1.24;
+    letter-spacing: -0.02em;
   }
   .hero-note {
-    margin: 22px 0 0;
-    padding-top: 14px;
-    border-top: 1px dashed #555;
-    font-size: 12px;
-    line-height: 1.55;
+    margin: 34px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(17, 17, 17, 0.84);
   }
 
   .metrics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 16px;
-    border: 2px inset #fff;
+    margin-top: 22px;
+    border: 1px solid var(--line);
     background: #fff;
   }
   .metric {
-    min-height: 80px;
-    padding: 10px;
-    border-right: 1px solid #999;
+    min-height: 112px;
+    padding: 20px;
+    border-right: 1px solid var(--line);
   }
   .metric:last-child { border-right: 0; }
   .metric strong {
     display: block;
-    color: var(--maroon);
-    font-size: 30px;
+    color: var(--green);
+    font-family: Georgia, serif;
+    font-size: 38px;
     line-height: 1;
   }
   .metric span {
     display: block;
-    margin-top: 7px;
+    margin-top: 12px;
     font-size: 11px;
-    line-height: 1.25;
+    line-height: 1.55;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.72;
   }
 
   .section-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
-    gap: 20px;
+    gap: 28px;
   }
   h2 {
     margin: 0 0 12px;
-    color: #082b22;
-    font-size: 22px;
+    color: var(--green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 33px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
   }
-  p { line-height: 1.65; }
-  .about-copy { margin: 0; font-family: Georgia, serif; font-size: 17px; }
+  p { line-height: 1.75; }
+  .about-copy { margin: 0; font-family: Georgia, serif; font-size: 19px; line-height: 1.75; }
   .principles {
     margin: 0;
     padding: 0;
     list-style: none;
   }
   .principles li {
-    padding: 9px 0;
-    border-bottom: 1px dashed #777;
-    font-size: 13px;
-    line-height: 1.4;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1.7;
   }
   .principles li:last-child { border-bottom: 0; }
-  .principles strong { color: var(--maroon); }
+  .principles strong { color: var(--green); }
 
   .ventures {
     display: grid;
@@ -350,38 +363,40 @@
     gap: 9px;
   }
   .venture {
-    min-height: 150px;
-    padding: 14px;
-    background: #f5f5f5;
-    border: 2px outset #fff;
+    min-height: 190px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--line);
   }
   .venture strong {
     display: block;
-    margin-bottom: 7px;
-    color: var(--blue);
-    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: 0.14em;
   }
   .venture span {
-    color: #333;
+    color: rgba(17, 17, 17, 0.86);
     font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1.7;
   }
   .venture a {
     display: inline-block;
-    margin-top: 14px;
-    color: var(--maroon);
+    margin-top: 18px;
+    color: var(--green);
     font-size: 11px;
     font-weight: 700;
-    text-decoration: underline;
+    text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
   .venture-note {
-    margin: 14px 0 0;
-    color: #333;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
+    margin: 20px 0 0;
+    color: rgba(17, 17, 17, 0.76);
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
   }
 
   .ecosystem-flow {
@@ -390,25 +405,26 @@
     gap: 8px;
     align-items: center;
     margin: 0 0 14px;
-    padding: 12px;
+    padding: 20px;
     background: #fff;
-    border: 2px inset #fff;
+    border: 1px solid var(--line);
   }
   .flow-step {
-    min-height: 56px;
-    padding: 9px;
-    border: 1px solid #777;
+    min-height: 72px;
+    padding: 14px;
+    border: 1px solid var(--line);
     font-size: 11px;
-    line-height: 1.35;
+    line-height: 1.6;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
   .flow-step strong {
     display: block;
-    margin-bottom: 4px;
-    color: var(--maroon);
+    margin-bottom: 6px;
+    color: var(--green);
   }
-  .flow-arrow { color: var(--blue); font-size: 20px; font-weight: 700; }
+  .flow-arrow { color: var(--green); font-size: 20px; font-weight: 700; }
 
   .proof-grid {
     display: grid;
@@ -416,22 +432,23 @@
     gap: 9px;
   }
   .proof {
-    min-height: 112px;
-    padding: 12px;
+    min-height: 138px;
+    padding: 22px;
     background: #fff;
-    border: 2px inset #fff;
+    border: 1px solid var(--line);
   }
   .proof strong {
     display: block;
-    margin-bottom: 7px;
-    color: var(--maroon);
-    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--green);
+    font-family: Georgia, serif;
+    font-size: 36px;
     line-height: 1;
   }
   .proof span {
     font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   .location-row {
@@ -441,10 +458,12 @@
     margin-top: 15px;
   }
   .tag {
-    padding: 4px 8px;
+    padding: 7px 10px;
     background: #fff;
-    border: 1px solid #222;
+    border: 1px solid var(--line);
     font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .contact-grid {
@@ -453,59 +472,66 @@
     gap: 8px;
   }
   .contact-grid a {
-    min-height: 46px;
-    padding: 14px 8px;
-    background: var(--panel);
-    border: 2px outset #fff;
-    color: #111;
+    min-height: 56px;
+    padding: 18px 8px;
+    background: var(--green);
+    border: 1px solid var(--green);
+    color: var(--cream);
     font-family: Arial, sans-serif;
     font-size: 12px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
+    letter-spacing: 0.12em;
+    transition: background 0.18s ease, color 0.18s ease;
   }
-  .contact-grid a:hover { background: #e7e7e7; }
-  .contact-grid a:active { border-style: inset; }
+  .contact-grid a:hover { background: var(--ink); border-color: var(--ink); }
+  .contact-grid a:active { transform: translateY(1px); }
 
   .search-copy {
     margin: 0;
     font-family: Georgia, serif;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 19px;
+    line-height: 1.85;
   }
   .faq-list {
     display: grid;
-    gap: 12px;
+    gap: 16px;
   }
   .faq-item {
-    padding: 12px;
+    padding: 20px;
     background: #fff;
-    border: 2px inset #fff;
+    border: 1px solid var(--line);
   }
   .faq-item h3 {
     margin: 0 0 8px;
-    color: var(--blue);
-    font-size: 16px;
+    color: var(--green);
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
   }
   .faq-item p {
     margin: 0;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   .footer {
-    margin-top: 18px;
-    color: #1d3210;
+    margin-top: 38px;
+    color: rgba(17, 17, 17, 0.76);
     font-size: 11px;
-    line-height: 1.7;
+    line-height: 2;
     text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
   .badge {
     display: inline-block;
     margin: 5px 2px 0;
-    padding: 2px 6px;
+    padding: 4px 8px;
     background: #fff;
-    border: 1px solid #222;
-    color: #111;
+    border: 1px solid var(--line);
+    color: var(--ink);
     text-transform: uppercase;
   }
 
@@ -522,10 +548,10 @@
     .topline { align-items: flex-start; flex-direction: column; gap: 6px; padding: 8px 12px; }
     .topline nav { gap: 10px; }
     .shell { width: min(100% - 16px, 1120px); margin-top: 12px; }
-    .window-body { padding: 10px; }
+    .window-body { padding: 18px; }
     .photo-wrap { min-height: 260px; }
-    .hero-copy { padding: 14px; }
-    .lede { font-size: 18px; }
+    .hero-copy { padding: 20px; }
+    .lede { font-size: 22px; }
     .metrics { grid-template-columns: 1fr; }
     .metric { min-height: 0; border-right: 0; border-bottom: 1px solid #999; }
     .metric:last-child { border-bottom: 0; }
@@ -535,7 +561,7 @@
 </head>
 <body>
   <header class="topline">
-    <div><span class="status-dot"></span>TejiriJesse.com / online</div>
+    <div class="brand-lockup"><span class="orb" aria-hidden="true"></span><span>Tejiri Jesse</span></div>
     <nav aria-label="Primary">
       <a href="#about">About</a>
       <a href="#building">Building</a>
