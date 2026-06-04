@@ -137,9 +137,75 @@
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.01em;
   }
+  body.entered .entry-screen {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.02);
+  }
+  body.entered .site-content {
+    opacity: 1;
+    transform: none;
+  }
 
   a { color: inherit; }
   button, a { -webkit-tap-highlight-color: transparent; }
+
+  .entry-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: var(--cream);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .entry-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: min(92vw, 980px);
+  }
+  .entry-orb {
+    display: block;
+    width: min(78vw, 760px);
+    max-width: 760px;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .entry-orb:hover {
+    transform: scale(1.015);
+  }
+  .entry-orb:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 12px;
+  }
+  .entry-orb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .entry-label {
+    margin: 0;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .site-content {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 
   .topline {
     display: flex;
@@ -599,6 +665,16 @@
 </style>
 </head>
 <body>
+  <section class="entry-screen" aria-label="Enter site">
+    <div class="entry-inner">
+      <button class="entry-orb" id="enter-site" type="button" aria-label="Enter Tejiri Jesse website">
+        <img src="assets/orb-reference.png" alt="Forest green orb">
+      </button>
+      <p class="entry-label">Tap the orb</p>
+    </div>
+  </section>
+
+  <div class="site-content" id="site-content">
   <header class="topline">
     <div class="brand-lockup">
       <img class="orb-mark" src="assets/orb-reference.png" alt="" aria-hidden="true">
@@ -805,5 +881,23 @@
       <span class="badge">Best viewed with curiosity</span>
     </footer>
   </main>
+  </div>
+
+  <script>
+    (() => {
+      const enterButton = document.getElementById("enter-site");
+      const content = document.getElementById("site-content");
+      if (!enterButton || !content) return;
+
+      const enterSite = () => {
+        document.body.classList.add("entered");
+        window.setTimeout(() => {
+          content.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      };
+
+      enterButton.addEventListener("click", enterSite);
+    })();
+  </script>
 </body>
 </html>
