@@ -164,12 +164,13 @@
     align-items: center;
     gap: 12px;
   }
-  .orb {
-    width: 18px;
-    height: 18px;
-    border-radius: 999px;
-    background: var(--green);
+  .orb-mark {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
     flex-shrink: 0;
+    border-radius: 999px;
   }
 
   .shell {
@@ -561,7 +562,10 @@
 </head>
 <body>
   <header class="topline">
-    <div class="brand-lockup"><span class="orb" aria-hidden="true"></span><span>Tejiri Jesse</span></div>
+    <div class="brand-lockup">
+      <img class="orb-mark" src="assets/orb-reference.png" alt="" aria-hidden="true">
+      <span>Tejiri Jesse</span>
+    </div>
     <nav aria-label="Primary">
       <a href="#about">About</a>
       <a href="#building">Building</a>
